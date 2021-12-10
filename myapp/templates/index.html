@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method = "POST" action="add" class="form-horizontal" enctype="multipart/form-data">
+  <h1> Student Information Form</h1>
+    {% csrf_token %}
+    <div>
+    <label >Name: </label> 
+      {{ form.name }}
+    </div>  
+    <br>
+
+<div>
+     <label>Address: </label>
+      {{ form.address }}
+    </div> 
+    <br>
+
+    <div>
+    <label >Mobile No: </label>
+    {{ form.mobileNo }}
+  </div> 
+  <br>
+    
+  <div>
+    <label>Email: </label>
+    {{ form.email }}
+  </div>
+  <br>
+    
+  <div>
+    <label>Age: </label>
+    {{ form.age }}
+  </div>
+  <br>
+
+    <div>
+    <label>Education: </label>
+    {{ form.education }}
+  </div> 
+  <br>
+   
+</div>
+<div>
+  <label>Upload Documents: </label>
+  <input type="file" name="images" multiple>
+
+</div>
+
+      <br>
+      <br>
+      <br>
+
+    <div class="text-center m-5">
+      <h5>Educational Qualification: </h5>
+      <table class = "table table-striped">
+        <tr>
+          <th> Sr. No. </th>
+          <th> Qualification </th>
+          <th> University </th>
+          <th> Institution </th>
+          <th> Year of passing </th>
+          <th> Percentage </th>
+        </tr>
+        <tr>
+          <td> {{ form.SrNo }} </td>
+          <td> {{ form.qualification }} </td>
+          <td> {{ form.university }} </td>
+          <td> {{ form.institution }} </td>
+          <td> {{ form.passingYear }} </td>
+          <td> {{ form.percentage }} </td>
+        </tr>
+      
+
+
+      </table>
+      <button type = "submit" class="btn btn-primary text-center m-2">Submit</button>
+
+    </div> 
+    
+  </form>
+
+    {% endblock %}   

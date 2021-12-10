@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Student Information Form</h1>
+{% for i in student %}
+<label>Name: {{ i.name }} </label>
+<br>
+<lable>Address: {{ i.address }} </label>
+    <br>
+<lable>Mobile No: {{ i.mobileNo }} </label>
+    <br>
+<lable>Email: {{ i.email }} </label>
+    <br>
+<lable>Age: {{ i.age }} </label>
+    <br>
+<lable>Education: {{ i.education }} </label>
+    <br>
+{% endfor %}
+<h5>Educational Qualification: </h5>
+<br>
+<table class = "table table-striped">
+    <tr>
+        <th>Sr. No.</th>
+        <th>Qualification</th>
+        <th>University</th>
+        <th>Institution</th>
+        <th>Year of passing</th>
+        <th>Percentage</th>
+    </tr>
+
+    {% for i in student %}
+    <tr>
+        <td>{{ i.SrNo }}</td>
+        <td>{{ i.qualification }}</td>
+        <td>{{ i.university }}</td>
+        <td>{{ i.institution }}</td>
+        <td>{{ i.passingYear }}</td>
+        <td>{{ i.percentage }}</td>
+    </tr>
+    {% endfor %}
+</table>  
+
+
+{% endblock %}
